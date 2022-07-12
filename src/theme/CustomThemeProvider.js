@@ -1,8 +1,9 @@
 import {ThemeProvider, createTheme} from "@mui/material/styles";
 import {commonColors, darkColors, lightColors} from "./colors";
+import {useSelector} from "react-redux";
 
 const CustomThemeProvider = (props) => {
-    const darkMode = false;
+    const darkMode = useSelector(state => state.darkMode.isDarkMode);
     const theme = createTheme({
         palette: {
             mode: darkMode ? 'dark' : 'light',
