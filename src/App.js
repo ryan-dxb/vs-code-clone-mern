@@ -8,17 +8,17 @@ import Loading from "./components/common/loading/Loading";
 
 function App() {
     return (
-        <Suspense fallback={<Loading/>}>
-            <StoreProvider>
-                <Router>
-                    <AuthProvider>
-                        <CustomThemeProvider>
-                            <Routes/>
-                        </CustomThemeProvider>
-                    </AuthProvider>
-                </Router>
-            </StoreProvider>
-        </Suspense>
+        // <Suspense fallback={<Loading/>}>
+        <StoreProvider>
+            <Router>
+                <AuthProvider>
+                    <CustomThemeProvider>
+                        <Routes/>
+                    </CustomThemeProvider>
+                </AuthProvider>
+            </Router>
+        </StoreProvider>
+        // </Suspense>
     );
 }
 

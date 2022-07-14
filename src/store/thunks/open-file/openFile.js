@@ -1,6 +1,6 @@
 import {addActiveFile, setEditorActiveFileId} from "../../slices/files/files";
 
-const openFile = (node) => (dispatch, getState) => {
+export const openFile = (node) => (dispatch, getState) => {
     const {id, children} = node;
 
     if (children) {
