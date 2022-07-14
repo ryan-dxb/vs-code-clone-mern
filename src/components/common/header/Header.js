@@ -1,12 +1,13 @@
 import {AppBar, Toolbar, Typography} from "@mui/material";
 import {styled} from "@mui/material/styles";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import paths from "../../../routes/paths";
 import SignInButton from "./SignInButton";
 import SignOutButton from "./SignOutButton";
 import CodeEditorButton from "./CodeEditorButton";
 import {useAuth0} from "@auth0/auth0-react";
 import DarkModeSwitch from "./DarkModeSwitch";
+import OpenWorkspaceButton from "./OpenWorkspaceButton";
 
 const StyledLink = styled(Link)(({theme}) => ({
     textDecoration: "none",
@@ -38,9 +39,12 @@ const UnauthenticatedButton = () => {
 }
 
 const AuthenticatedButton = () => {
+    const history = useHistory();
+
+
     return (
         <div>
-            <CodeEditorButton/>
+            {history.location.pathname === paths.home ? <CodeEditorButton/> : <OpenWorkspaceButton/>}
             <SignOutButton/>
         </div>
     )
